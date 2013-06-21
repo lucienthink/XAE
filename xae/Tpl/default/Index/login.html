@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>西安电子科技大学云计算</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" /><!--窗口图标-->
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" type="text/css"/>
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/log.css" type="text/css" />
+<script language="javascript">
+function check_info(){
+   if(document.form.A_id.value.length<4){
+     alert('用户名过短！');
+	 return false;
+   }
+   if(document.form.A_code.value.length<4){
+     alert('密码过短！');
+	 return false;
+   }
+}
+</script>
+</head>
+<body>
+
+<include file="Public:header" />
+
+<div id="doc">
+	<div id="body">
+		<div id="main">      
+        	<div class="separator radius">
+			<img src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;用户登录
+			</div>	
+			<div class="clr"></div>
+            <div class="container" align="center">
+        	<form name="form" id="form" method="post"  action="__URL__/checkUser" onsubmit="check_info();" >
+        	<table>
+                <tr>
+                    <td class="diyilie">用户名：</td>
+		            <td class="dierlie"><input type="text" name="A_id" id="A_id" class="input_information" style="width:150px;" /><span style="color:red">&nbsp;&nbsp;乱登砍死你哦</span></td>
+		        </tr>
+		        <tr>
+		            <td class="diyilie">密码：</td>
+		            <td class="dierlie"><input type="password" name="A_code" class="input_information" style="width:150px" /><font color="red">&nbsp;&nbsp;*</font></td>
+		        </tr>
+
+					<tr>
+						<td>&nbsp;
+	                    
+	                    </td>
+	                    <td>
+	                    <button type="submit"><img src="__PUBLIC__/Information/确定.jpg"></button>&nbsp;&nbsp;&nbsp;
+	                    <button type="reset"><img src="__PUBLIC__/Information/取消.jpg"></button>
+	                    </td>
+                    </tr>
+                   </table> 
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<include file="Public:footer" />

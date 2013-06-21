@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用发布-热门应用</title>
+<link rel="stylesheet" href="__PUBLIC__/CSS/3d.css" type="text/css" />
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+<script language="javascript" type="text/javascript" src="__PUBLIC__/javascript/3d.js"></script>
+<style type="text/css">
+.img{width:120px;height:80px;}
+</style>
+</head>
+
+<body>
+<include file="Public:header5" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+<?php
+if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+echo <<<Eof
+	<li><a href="__URL__/ShowMyApp">我的应用</a></li>
+Eof;
+}
+?>
+			<li><a href="__URL__/applications">最新应用</a></li>
+			<li><a href="#" class="selected">热门应用</a></li>
+			<li><a href="__URL__/showAll">所有应用</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;热门应用标签云
+			</div>
+			<div class="padding_top"></div>
+			<div id="div1">
+			<p><a href="#"><img src="__PUBLIC__/Information/3.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/1.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/1.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/2.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/2.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/3.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/1.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/2.jpg" class="img" />计算机学院</a></p>
+			<p><a href="#"><img src="__PUBLIC__/Information/3.jpg" class="img" />计算机学院</a></p>
+			</div>
+		</div><!--main-->
+	</div>
+</div>
+<include file="Public:footer" />
+</body>
+</html>

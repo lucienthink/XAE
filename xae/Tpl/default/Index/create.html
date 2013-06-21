@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用-创建应用</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+
+<load href="__PUBLIC__/javascript/Base.js" />
+<load href="__PUBLIC__/javascript/prototype.js" />
+<load href="__PUBLIC__/javascript/mootools.js" />
+<load href="__PUBLIC__/javascript/Ajax/ThinkAjax.js" />
+
+{/*检测用户名是否唯一*/}
+
+</head>
+<script type="text/javascript">
+function check(){
+   ThinkAjax.send("__URL__/checkApp","ajax=1&C_id="+$('C_id').value,'',"result");
+}
+function check_app(){
+   if(document.form.C_id.value.length>10){
+     alert('应用名过长!');
+	 return false;
+   }
+}
+</script>
+
+<body>
+<include file="Public:header2" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+
+<?php
+if(1==1){
+echo <<<Eof
+	<li><a href="__URL__/Myapp">我的应用</a></li>
+Eof;
+}
+?>
+
+			<li><a href="__URL__/application">推荐应用</a></li>
+			<li><a href="__APP__/File/index">上传应用</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;创建应用
+			</div>
+			<div class="clr"></div>
+
+			<div id="result" style="font-size:20px; display:none; color:blue">
+			This is result!!!!!!
+			</div>
+
+            <form name="form" method="post"  action="__URL__/addapp" onsubmit="return check_app();" >
+			<table id="tianjiayingyong" cellspacing="10">
+            <tr>
+			<td class="diyilie">二级域名：</td><td class="dierlie">www.cloud.xidian.edu.cn/
+			<input style="width:130px;" type="text" value="请输入用户名" onClick="value=''" onblur="check_app()" name="C_id" id="C_id" class="input_information" />
+			&nbsp;&nbsp;&nbsp;<input type="button" value="检 查" onClick="check()">&nbsp;&nbsp;&nbsp;<span style='color:red'>(* 用户名仅由字母构成,长度在4～10之间！)</span></td>
+            </tr>
+			<tr>
+            <td class="diyilie">类型：</td>
+            <td class="dierlie">
+            	<select style="text-align:center;" name = "D_type">
+    		   	   <option class="single">学习</option>
+                 	   <option class="even">音乐</option>
+			   <option class="single">游戏</option>
+			   <option class="even">工具</option>
+			   <option class="single">旅游</option>
+			   <option class="even">汽车</option>
+			   <option class="single">摄影</option>
+			   <option class="single">其他</option>
+			   </select>
+            </td>
+            <tr>
+	  		 <td class="diyilie">简单介绍: <br></td>
+			 <td class="dierlie">
+             <textarea name="D_state" cols="35" rows="7" class="input_information" onclick="value=''">介绍几句...</textarea>
+             </td>
+            </tr>
+            <tr>
+            <td class="diyilie">&nbsp;</td>
+             <td class="dierlie"><button type="submit"><img src="__PUBLIC__/Information/确定.jpg"></button>&nbsp;&nbsp;<button type="reset" ><img src="__PUBLIC__/Information/取消.jpg"></button></td>
+             </tr>
+			</table>
+           </form>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer" />
+

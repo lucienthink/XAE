@@ -1,0 +1,71 @@
+* {margin:0px;padding:0px;}
+body,div,ul,li,h1,h2,h3,h4,h5,h6 {padding:0;margin:0;}
+body {font-family: "Î¢ÈíÑÅºÚ",Arial, Helvetica, sans-serif,;font-size:12px;}
+body {font:14px/1.231 arial,helvetica,clean,sans-serif;font-size:small;font:x-small;}
+body {text-align:left;  background:#ffffff url("../Information/bg2.jpg") repeat scroll;}
+li {list-style-type:none;}
+
+
+#hd {position:relative;}
+#top_box {width:990px;min-height:65px;margin:0 auto;position:relative;background-color:#FFF;padding-top:10px;}
+#logo {width:212px;float:left;position:relative;}
+#logo1{margin-left:20px;}
+#top_content {width:770px;float:left;position:relative;margin-left:8px;}
+
+.bluetabs {margin-right:15px;}
+.bluetabs li {display:inline;right:10px;}
+a,a.hover,a.visited {text-decoration:none;color:#0060bf;}
+a.active {color:#ff2424;}
+.hlinks {color:#ddd;margin-bottom:10px;width:770px;}
+.hlinks a {color:#0060bf;}
+.strong a {font-weight:bolder;}
+.hlinks a.cur{color:#aaa;}
+.hlinks a.cur:hover{color:#000;}
+.clr{clear:both;height:0;border:none;font-size:0;}
+.eng_size {font-size:12px;}
+.padding_top {padding-top:10px;}
+.img-div {width:600px;height:200px;border:2px solid #ffe8e8;float:left;margin:10px 0px;}
+.navigation {height:35px;margin:0 0 0 25px;padding-top:10px;}
+.main_content {float:right;width:720px;background:#ffffff;}
+
+#top_nav {color:#aaaaaa;overflow:hidden;font-size:18px;padding:0 20px 0 10px;float:left;}
+#top_nav ul.nav {list-style:none;list-style:none outside none;}
+#top_nav ul.nav li {display:inline;float:left;margin-left:10px;margin-right:10px;text-align:center;font-weight:bold;}
+#top_nav ul.nav li a.selected {color:#ff2424;}
+#doc div.navigation li a.selected {color:#ff2424;}
+#top_nav ul.nav a {color:#0060bf;}/*ï¿½ï¿½Ê¾ï¿½ï¿½É«*/
+#top_nav ul.nav li a:hover,a:active {color:#ff2424;}
+#line {height:10px;background:#ffffff url(../Information/line.png) scroll left 7px repeat-x;position:center;font-size:0px; width:990px; margin-left:200px;margin:0 auto;margin-top:-1px;}
+#nav_cur {width:10px;height:10px;position:absolute;font-size:0px;}
+
+#panecontent {float:left;background:#ffffff;}
+.pane {float:left;display:block;height:380px;}
+
+
+#doc {margin:0 auto;width:990px;min-width:750px;text-align:left;height:430px; background-color:#FFF}
+#body {height:440px;clear:both;margin:0 auto;position:relative;width:990px;background:#ffffff;}
+#main {width:930px;float:left;margin-right:-25em;padding:0 0 0 30px;background:#ffffff;}
+#main1 {width:960px;float:left;margin-right:-25em;padding:0 0 0 30px;background:#ffffff;}
+#menu {clear:both;width:100%;margin:0 auto;padding:0;font-size:16px;}
+#menu li {float:left;display:block;padding-left:5px;padding-right:5px;font-size:15px;font-weight:bold;color:#0060bf;cursor:pointer;border-right:2px solid #ffb8b8;}
+#rightbody {width:277px;position:relative;float:right;text-align:left;margin-right:2px;}
+#bottom {padding:20px 0;position:relative;margin:0 auto;width:990px; background-color:#FFF}
+#bottom p {text-align:left;margin:1% 0 0 3%;}
+#bottom p label {color:#aaaaaa;font-weight:bolder;} 
+#bottom p span {color:#ffe8e8;}
+#bottom p span a {color:#0060bf;}
+
+.threeparts {width:600px;text-align:left;}
+.threeparts strong {color:#aaaaaa;font-weight:bolder;}
+.threeparts div.left {width:189px;float:left;border:2px solid #ffe8e8;min-height:150px;}
+.threeparts div.middle {width:190px;float:left;margin-left:9px;min-height:150px;border:2px solid #ffe8e8;}
+.threeparts div.right {width:190px;float:right;min-height:150px;margin-left:10px;border:2px solid #ffe8e8;padding:0;}
+
+.loginbox {width:90%;height:130px;position:relative;text-align:center;margin:0 auto; margin-right:25px;border:2px solid #ffe8e8; line-height:180%;z-index:3;}
+.newbox {width:90%;height:250px;margin-top:10px;position:relative;text-align:center;margin-right:20px;border:2px solid #ffe8e8;}
+#beijingtu{background-image:url(../Information/newbox.gif); }
+#beijingtu div{margin-top:20px;}
+.blue {color:#0060fb;font-weight:bold;font-size:13px;margin:5px;}
+.grey {color:#aaaaaa;font-weight:bolder;font-size:15px;}
+
+img{border:0px}/*Í¼Æ¬±ß¿ò*/

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户注册</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+
+<load href="__PUBLIC__/javascript/Base.js" />
+<load href="__PUBLIC__/javascript/prototype.js" />
+<load href="__PUBLIC__/javascript/mootools.js" />
+<load href="__PUBLIC__/javascript/Ajax/ThinkAjax.js" />
+
+<script type="text/javascript">
+function freshVerify()
+{
+	document.getElementById('verifyImg').src='__URL__/verify/'+Math.random();
+}
+</script>
+
+{/*检测用户名是否唯一*/}
+
+</head>
+<script type="text/javascript">
+function check(){
+   ThinkAjax.send("__URL__/checkTitle","ajax=1&A_id="+$('A_id').value,'',"result");
+   }
+function check_info(){
+   if(document.form.A_id.value.length<4){
+     alert('用户名过短！');
+	 return false;
+   }else if(document.form.A_id.value.length>12){
+     alert('用户名过长！');
+	 return false;
+   }
+   if(document.form.A_code.value.length<4){
+     alert('密码过短！');
+	 return false;
+   }
+   if(document.form.A_mail.value.length<4){
+     alert('邮箱必须！');
+	 return false;
+   }else{
+     var patten=/^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; 
+	 if (!patten.test(document.form.A_mail.value)) {
+       document.form.A_mail.select();
+	   alert('请输入正确的邮箱！');
+       return false;
+	 }
+   }
+}
+</script>
+
+<include file="Public:header" />
+
+<div id="doc">
+	<div id="body">
+		<div id="main">
+			<div class="separator radius">
+			<img src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;新用户注册
+			</div>	
+			<div class="clr"></div>
+            <div class="container" align="center">
+            	
+        <form name="form" id="form" method="post"  action="__URL__/insert" onsubmit="return check_info();">
+  
+		
+        <table>
+                <tr>
+                    <td class="diyilie">用户名：</td>
+		            <td class="dierlie"><input type="text" name="A_id" id="A_id" class="input_information" style="width:150px;" value="最少四位哦!" onClick="value=''"  /><span style="color:red">&nbsp;&nbsp;*最少4位</span>
+		            <input type="button" value="检 查" onClick="check()">
+                    <td><div id="result" style="font-size:20px; display:none; color:blue">
+		This is result!!!!!!
+		</div></td><br /></td>
+		        </tr>
+		        <tr>
+		            <td class="diyilie">邮箱：</td>
+					<td class="dierlie"><input type="text" name="A_mail" id="A_mail" class="input_information" style="width:150px;" value="请输入常用的邮箱..." onClick="value=''" /><font color="red">&nbsp;&nbsp;*</font></td>
+		        </tr>
+		        <tr>
+		            <td class="diyilie">设置密码：</td>
+		            <td class="dierlie"><input type="password" name="A_code" id="A_code" class="input_information" style="width:150px" /><span style="color:red">&nbsp;&nbsp;*最少4位</span></td>
+		        </tr>
+		        <tr>
+		            <td class="diyilie">确认密码：</td>
+		            <td class="dierlie"><input type="password" name="code" class="input_information" style="width:150px" /><font color="red">&nbsp;&nbsp;*</font></td>
+		        </tr>
+		        <tr>            
+					<td class="diyilie">验证码：</td>
+					<td class="dierlie">
+						<input type="text" name="verifytest" size="6" class="input_information" onclick="value=''" ><font color="red">&nbsp;&nbsp;*</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="diyilie">&nbsp;</td>
+					<td class="dierlie">
+						<img style="cursor:pointer" title="刷新验证码" src="__URL__/verify/"  id="verifyImg" onClick="freshVerify()"/>
+					</td>
+				</tr>
+
+					<tr>
+						<td>&nbsp;
+	                    
+	                    </td>
+	                    <td>
+	                    <button type="submit"><img  src="__PUBLIC__/Information/确定.jpg"></button>&nbsp;&nbsp;&nbsp;
+	                    <button type="reset"><img  src="__PUBLIC__/Information/取消.jpg"></button>
+	                    </td>
+                    </tr>
+                   </table> 
+                </form>
+            </div>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer" />

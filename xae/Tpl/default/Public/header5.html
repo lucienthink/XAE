@@ -1,0 +1,74 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<link rel="stylesheet" href="__PUBLIC__/CSS/temp.css" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" type="text/css" />
+<script language="javascript" src="__PUBLIC__/javascript/dropmenu.js"></script>
+<load href="__PUBLIC__/javascript/Base.js" />
+<load href="__PUBLIC__/javascript/prototype.js" />
+<load href="__PUBLIC__/javascript/mootools.js" />
+<load href="__PUBLIC__/javascript/Ajax/ThinkAjax.js" />
+<load href="__PUBLIC__/javascript/Form/CheckForm.js" />
+<script language="JavaScript">
+<!--
+ThinkAjax.updateTip = '<IMG SRC="__PUBLIC__/Information/loading2.gif" WIDTH="16" HEIGHT="16" BORDER="0" ALT="loading..." align="absmiddle"> 数据处理中...';
+//-->
+</script>
+<div id="hd">
+<div id="top_box">
+	<div id="logo">
+		<a href="__URL__/index"><img src="__PUBLIC__/Information/logo.png" height="70" width="130" id="logo1"></a>
+	</div>
+	<div id="top_content">
+		<div class="hlinks strong">
+		 <div class="bluetabs" style="float:right;position:relative;"><!--其中内嵌style="float:right;"与CSS样式中的float:right不一样-->
+		 <ul id="dropmenu">
+         
+<?php
+	if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+echo "
+    	<li><a href='__URL__/userinfoshow'>";
+echo $_SESSION['account'];
+echo "</a>&nbsp;|&nbsp;</li>
+		<li><a href='__URL__/logout'>注销</a>&nbsp;|&nbsp;</li>";
+	}else{
+echo <<<EOF
+    	<li><a href="__URL__/login">登录</a>&nbsp;|&nbsp;</li>
+		<li><a href="__URL__/register">注册</a>&nbsp;|&nbsp;</li>
+EOF;
+    }
+
+?>
+
+		 <li><a href="#">开发资料</a><img src="__PUBLIC__/Information/drop.png" />&nbsp;|&nbsp;
+			 <ul>
+			 <li><a href="__APP__/Index/DevCenter">部署代码</a></li>
+			 <li><a href="__APP__/Index/Doc">文档中心</a></li>
+			 <li><a href="__APP__/Index/API">API文档</a></li>
+			 <li><a href="__APP__/Index/FAQ">FAQs</a></li>
+			 </ul>
+		 </li>
+		 <li><a href="__APP__/Index/suggestion">意见反馈</a></li>
+		 </ul>
+		 </div>
+		 <div class="clr"></div><!--清除设置的浮动效果，否则下一个层将置顶-->
+		 </div>
+		 <div id="top_nav">
+		 <ul class="nav">
+		 <li><a href="__APP__/Index/index" ><span >首页</span><br><span class="eng_size">HOME</span></a></li>
+		 <li><a href="__APP__/Index/application" ><span>应用</span><br><span class="eng_size">APPLICATION</span></a></li>
+		 <li><a href="__APP__/Index/DevCenter" ><span>开发者中心</span><br><span class="eng_size">DEVELOPER CENTER</span></a></li>
+		 <li><a href="__APP__/Index/FAQ" ><span>常见问题</span><br><span class="eng_size">FAQs</span></a></li>
+		 <li><a href="__APP__/Index/applications" class="selected"><span id="selected">应用发布</span><br><span class="eng_size">APPLICATION PUBLIC</span></a></li>
+		 </ul>
+		 </div>
+	</div>
+	<div class="clr"></div>
+</div>
+
+</div>
+
+<div id="line">
+	<div id="nav_cur">
+	<img src="__PUBLIC__/Information/cursor.png" width="16" height="20" id="cursor">	</div>
+	</div>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/javascript/fix.js"></script>

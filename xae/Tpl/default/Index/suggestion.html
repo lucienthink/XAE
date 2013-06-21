@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>开发者中心-意见反馈</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css">
+<script language="javascript" src="__PUBLIC__/javascript/js.js"></script>
+<script language="javascript">
+function help_check(){
+	if(document.help_form.help_title.value==""){
+		alert("请填写标题！");
+		return false;
+	}
+	if(document.help_form.help_URL.value==""){
+		alert("请填写链接！");
+		return false;
+	}
+	if(document.help_form.help_content.value==""){
+		alert("请填写内容！");
+		return false;
+	}
+}
+function bug_check(){
+	if(document.bug_form.bug_title.value==""){
+		alert("请填写标题！");
+		return false;
+	}
+	if(document.bug_form.bug_method.value==""){
+		alert("请填写改进方法！");
+		return false;
+	}
+	if(document.bug_form.bug_content.value==""){
+		alert("请填写内容！");
+		return false;
+	}
+}
+function sug_check(){
+	if(document.sug_form.sug_title.value==""){
+		alert("请填写标题！");
+		return false;
+	}
+	if(document.sug_form.sug_content.value==""){
+		alert("请填写内容！");
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<include file="Public:header3" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">	
+			<li><a href="__URL__/DevCenter">基础教程</a></li>
+			<li><a href="__URL__/Doc">文档中心</a></li>
+			<li><a href="__URL__/API">开发资源</a></li>
+			<li><a class="selected" href="#">意见反馈</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;意见反馈
+			</div>	
+
+			<div class="main_content_2"><!--这一部分是主内容-->
+				<div class="bar" style="margin-left:10px;">
+				<a href="__URL__/DevCenter">开发者中心</a>&nbsp;>>&nbsp;
+				<a href="#">意见反馈</a>
+				</div>
+			</div>
+            <div style="height:180px">
+				<div class="frame_2">
+            		<div class="cell">
+            			<p>&nbsp;</p>
+               		 	<p class="big">这个功能不会用！</p>
+               	 	    <button type="button" onclick="document.getElementById('help').style.display='block';document.getElementById('bug').style.display='none';document.getElementById('suggest').style.display='none';document.getElementById('bg').style.display='block'">
+                        <img  src="__PUBLIC__/Information/寻求帮助.jpg"></button>
+               		    <p>&nbsp;</p>
+               		</div>
+            	</div>
+           		<div class="frame_2">
+            		<div>
+            			<p>&nbsp;</p>
+                		<p class="big">这个功能出错了！</p>
+                  		<button type="button" onclick="document.getElementById('help').style.display='none';document.getElementById('bug').style.display='block';document.getElementById('suggest').style.display='none';document.getElementById('bg').style.display='block'"><img  src="__PUBLIC__/Information/反馈bug.jpg"></button>
+                  	 	<p>&nbsp;</p>
+               		</div>
+            	</div>
+            	<div class="frame_2">
+            		<div>
+            			<p>&nbsp;</p>
+             		   	<p class="big">要能这样就好了！</p>
+                	    <button type="button" onclick="document.getElementById('help').style.display='none';document.getElementById('bug').style.display='none';document.getElementById('suggest').style.display='block';document.getElementById('bg').style.display='block'"><img  src="__PUBLIC__/Information/提交建议.jpg"></button>
+                	    <p>&nbsp;</p>
+              		</div>
+            	</div>
+            </div>
+            
+         <div id="bg" style="background-color:#FFFFFF;width:960px;height:500px;display:none;">
+            <div class="container" id="help" style="display:none;">
+            	<form method="post" name="help_form" action="__URL__/insert2/E_type/help" onsubmit="return help_check();">
+					<p>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="help_title"name="E_title" type="text"  width="89%" class="input_information"></p>
+	 	      	    <p>类型：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;求助</p>
+                   	<p>求助URL：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="help_URL" name="E_url" class="input_information"></p>
+					<div id="feedback">
+                    	<p>反馈内容：</p>
+	   	      	    	<p><textarea cols=60 rows=8 name="E_content" id="help_content" class="input_information"></textarea></p>
+                    </div>
+                    <p>&nbsp;</p>
+					<p><button type="submit"><img  src="__PUBLIC__/Information/确定.jpg"></button>&nbsp;&nbsp;&nbsp;<button type="reset"><img  src="__PUBLIC__/Information/取消.jpg"></button></p>
+				</form>
+			</div>
+            
+            <div class="container" id="bug" style="display:none;">
+            	<form method="post" action="__URL__/insert2/E_type/bug" name="bug_form" onsubmit="return bug_check();">
+					<p>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="E_title" type="text"  id="bug_title" width="89%" class="input_information"></p>
+	 	      	    <p>类型：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bug</p>
+                    <span id="reproduce">
+                        <p>方法改进：</p>
+                        <p><textarea name="E_prove" cols=60 rows=3 class="input_information" id="bug_method"></textarea></p>
+                    </span>
+					<div id="feedback">
+                    	<p>反馈内容：</p>
+	   	      	    	<p><textarea name="E_content" cols=60 rows=8  class="input_information" id="bug_content"></textarea></p>
+                    </div>
+                    <p>&nbsp;</p>
+					<p><button type="submit"><img  src="__PUBLIC__/Information/确定.jpg"></button>&nbsp;&nbsp;&nbsp;<button type="reset"><img  src="__PUBLIC__/Information/取消.jpg"></button></p>
+				</form>
+			</div>
+            <div class="container" id="suggest" style="display:none;">
+            	<form method="post" name="sug_form" action="__URL__/insert2/E_type/suggestion" onsubmit="return sug_check();">
+					<p>标题：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sug_title" name="E_title" width="89%" class="input_information"></p>
+	 	      	    <p>类型: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;建议</p>
+                    <div id="suggest">
+                         <p>建议内容：</p>
+                         <p><textarea name="E_content" id="sug_content" cols=60 rows=8 class="input_information"></textarea></p>
+                    </div>
+                    <p>&nbsp;</p>
+					<p><button type="submit"><img  src="__PUBLIC__/Information/确定.jpg"></button>&nbsp;&nbsp;&nbsp;<button type="reset"><img  src="__PUBLIC__/Information/取消.jpg"></button></p>
+				</form>
+			</div>
+           </div>
+        </div>
+	</div>
+</div>
+
+<include file="Public:footer" />
+
+</body>
+</html>

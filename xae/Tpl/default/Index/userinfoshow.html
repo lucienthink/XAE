@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//Ddiv XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/Ddiv/xhtml1-transitional.ddiv">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户信息</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+<script language="javascript" src="__PUBLIC__/javascript/js.js"></script>
+</head>
+
+<body>
+<include file="Public:header" />
+
+<div id="doc">
+	<div id="body">
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;您的个人资料
+			</div>	
+			<div class="clr"></div>
+            <div class="container" align="center">
+					<volist name='list' id='vo'>
+					<table class="info">
+					<tr>
+                    <td class="lie">真实姓名：{$vo.B_name}</td>
+		            </tr>
+					<tr>
+		        
+		            <td class="lie">性别：{$vo.B_sex}</td>
+					</tr>
+					<tr>
+		        
+		       
+		            <td class="lie">年龄：{$vo.B_age}</td>	  
+					</tr>
+					<tr>
+		        
+		            <td class="lie">联系方式：{$vo.B_phone}</td>
+					</tr>
+					<tr>
+		                
+					<td class="lie">学历：{$vo.B_pos}</td>
+					</tr>
+					<tr>
+				
+					<td class="lie">入学年份：{$vo.B_entrance}</td>
+					</tr>
+					<tr>
+			
+			
+					<td class="lie">签名档：</td>
+					</tr>
+					<tr>
+					<td class="lie1">{$vo.B_signature}</td>
+					</tr>	
+				
+					
+                	</volist>
+				</table>	
+                    <a href="__URL__/addinfo"> <<<修改 </a>
+					
+               
+                
+               
+            </div>
+
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer" />

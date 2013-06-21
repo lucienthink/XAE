@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>开发者中心-XAE上的PHP环境</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css">
+<script language="javascript" src="__PUBLIC__/javascript/js.js"></script>
+</head>
+
+<body>
+<include file="Public:header3" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+			<li><a class="selected" href="____URL__/DevCenter">基础教程</a></li>
+			<li><a href="__URL__/Doc">文档中心</a></li>
+			<li><a href="#">开发资源</a></li>
+			<li><a href="__URL__/suggestion">意见反馈</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;XAE的PHP环境相关介绍
+			</div>	
+			<div class="left radius">
+				<div class="left_con">
+				<ul>
+				<li>»&nbsp;&nbsp;<a href="__URL__/DevCenter">快速起步</a></li>
+				<li>»&nbsp;&nbsp;<a href="__URL__/hello">编写一个HelloWorld</a></li>
+				<li>»&nbsp;&nbsp;<a href="#">XAE上的PHP环境</a></li>
+				<li>»&nbsp;&nbsp;<a href="__URL__/video">视频教程</a></li>
+				<li>»&nbsp;&nbsp;<a href="__URL__/mobile">移动设备开发</a></li>
+				</ul>
+				</div>
+			</div>
+			
+			<div class="main_content"><!--这一部分是主内容-->
+				<div class="bar">
+				<a href="__URL__/DevCenter">开发者中心</a>&nbsp;>>&nbsp;
+				<a href="__URL__/DevCenter">基础教程</a>&nbsp;>>&nbsp;
+				XAE上的PHP环境
+				</div>
+				<div class="title">
+				<p>XAE上的PHP环境</p>
+				</div>
+				<div class="text_layer0 radius">
+					<div class="text_layer1">
+				<div class="anchor">
+						<ul>
+						<li><a href="#anchor_3_1_1">整体介绍</a></li>
+						<li><a href="#anchor_3_1_2">扩展函数</a></li>
+						<li><a href="#anchor_3_1_3">限制</a></li>
+						<li><a href="#anchor_3_1_4">改进和移植</a></li>
+						</ul>
+						</div>
+
+					<p>
+					<p><a href="#"  class="doc_anchor" name="anchor_3_1_1">整体介绍</a></p>
+					<p> SAE提供基于PHP 5.3的运行环境（Runtime Environment），支持标准MySQL、Memcache、支持cURL和GD模块。SAE选择PHP作为首选支持语言最主要的原因是因为PHP语言在目前国内Web开发的比重是最大的，未来我们会考虑支持更多的Web开发语言，如Python、Java等。SAE的PHP Runtime和官方标准PHP环境几乎完全一样，99%的代码可以不加任何修改完美的运行在SAE环境中。SAE的PHP Runtime出于安全和性能的考虑，对标准PHP进行了一些扩展和改进。</p>
+					<p> <a href="#" class="doc_anchor" name="anchor_3_1_2">扩展函数</a></p>
+					<p> SAE在标准PHP的基础上，提供了一个独有函数供用户调用：bool sae_debug(string error_msg)
+ 输出信息到应用debug日志，方便用户在SAE平台上调试错误，作用等同于trigger_error</p>
+                   <p><a href="#" class="doc_anchor" name="anchor_3_1_3">限制 </a></p>
+				   <p> 出于安全性的考虑，SAE禁用了一些函数，这些函数主要分成3类：</p>
+				   <p>1，涉及本地操作系统的系统函数，如exec、link等</p>
+                   <p>2，涉及socket的网络函数，如fsockopen等</p>
+                   <p>3 ，一些不适合SAE的函数，如长连接mysql_pconnect、memcache_pconnect等</p>
+				   <p><a href="#"   class="doc_anchor" name="anchor_3_1_4">改进和移植</a></p>
+				   <p>因为SAE的分布式环境，所以不推荐用户使用本地IO操作，因此在SAE上的文件操作会和编写单机程序有一些区别：
+ 
+    1)临时存储文件:
+        临时存储文件是指存储的文件在访问结束后无需继续保存的临时性文件。
+        保存临时文件可以使用PHP标准tmpfile()和tempnam()函数生成,也可以使用SAE提供的TmpFS服务。
+ 
+    2)永久储存文件:
+        永久存储文件一般是指用户上传或者写入的文件，这类文件需要永久保存。SAE提供了Storage服务用来保存此类文件，开发者可以使用Storage的API进行操作；也可以直接使用file_put_contents等常用的文件操作函数进行操作，只需要将路径放在SAE预置的Storage Wapper "saestor://domain/" 下即可。
+        
+        例如，将一张上传图片"pic"保存到Storage的Domain "test"中，使用"saestor" Wapper只需如下操作：
+ 
+     $domain = 'test' ;          //Domain可以在后台面板设置
+     $filename = $_FILES['pic']['name'] ; 
+     file_put_contents( 'saestor://'.$domain.'/'.$filename,$_FILES['pic']['tmp_name']);//在路径前加上'saestor://'.$domain.'/'即可
+   
+    3)缓存存储文件:
+        缓存文件是指系统运行时会频繁请求的文件， SAE提供了基于Memcache的Wrapper "saemc://"，由于它是基于内存实现的，所以性能比Storage要好很多，,频繁读操作的文件都应该放到Memcache里。</p>
+		
+					
+ 
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</p><!--正文部分-->
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+<!--</div>--><!--个别页面显示问题-->
+
+
+<include file="Public:footer" />
+</body>
+</html>

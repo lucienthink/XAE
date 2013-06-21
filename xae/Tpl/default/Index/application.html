@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用-推荐应用</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+<link>
+</head>
+
+<script type="text/javascript">
+function get_name1(){ 
+   if(document.app_form1.app_id.value=="--请选择应用--"){
+     alert('请选择应用！');
+     return false;
+   }
+}
+function get_name2(){
+   if(document.app_form2.app_id.value=="--请选择应用--"){
+     alert('请选择应用！');
+     return false;
+   }
+}
+
+</script>
+
+<body>
+
+<include file="Public:header2" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+
+<?php
+if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+echo <<<Eof
+	<li><a href="__URL__/Myapp">我的应用</a></li>
+Eof;
+}
+?>
+			<li><a class="selected" href="#">推荐应用</a></li>
+<?php
+if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+
+echo <<<Eof
+	<li><a href="__APP__/File/index">上传应用</a></li>
+Eof;
+}
+?>		
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;推荐应用
+			</div>
+			<div class="clr"></div>
+			<div class="app">
+				<div class="app_image"><img  src="__PUBLIC__/Information/wordpress.png"  border="0"/></div>
+				<div class="app_introduce">
+					<div class="app_introduce_title">Wordpress for XAE</div><br />
+					<div><span style="color:#70019C">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于wordpress3.1.2中文版修改而成的XAE一键开发专用版本!</span></div>
+				</div>
+	<?php
+		if (isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login'])
+			{
+	?>			
+			<form method="post" action="__URL__/getName" name="app_form1">  
+				<div calss="app_load">
+				<div class="app_select">
+				<SELECT id="app_id" style="text-align:center;" name="app_id" style="width:110px;">
+				<OPTION width="200" selected="selected" value="--请选择应用--">--请选择应用--</OPTION>                		
+				<iterate name="list" id="vo">
+                    		<OPTION  width="200" value="{$vo.C_id}">{$vo.C_id}</OPTION>
+                		</iterate>
+            		        </SELECT>
+				</div>
+				<input class="app_button" type="submit" value="立即安装" 
+				onmouseover="this.className='app_button_over'" onmouseout="this.className='app_button'">
+				</div>
+			</form>
+			
+	<?php
+			}
+	?>
+		</div>	
+
+			<div class="app">
+			<div class="app_image"><img  src="__PUBLIC__/Information/discuz.png"  border="0"/></div>
+				<div class="app_introduce">
+					<div class="app_introduce_title">Discuz for XAE</div><br />
+					<div><span style="color:#70019C">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于discuzX2修改而成的XAE一键开发专用版本!</span></div>
+				</div>
+	<?php
+		if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login'])
+			{
+	?>
+			<form method="post" action="__URL__/getName1" name="app_form2">  
+				<div class="app_load">
+				<div class="app_select">
+				<SELECT id="app_id" style="text-align:center;" name="app_id" style="width:110px;">
+				<OPTION width="200" selected="selected" value="--请选择应用--">--请选择应用--</OPTION>                		
+				<iterate name="list" id="vo">
+		    		
+                    		<OPTION width="200" value="{$vo.C_id}">{$vo.C_id}</OPTION>
+                		</iterate>
+            		        </SELECT>
+				</div>
+				<input class="app_button" type="submit" value="立即安装" 
+				onmouseover="this.className='app_button_over'" onmouseout="this.className='app_button'">
+				</div>
+			</form>
+	<?php			
+			}
+	?>
+			</div>
+			<div class="app">
+			<div class="app_image"><img  src="__PUBLIC__/Information/ecshop.jpg"  border="0"/></div>
+				<div class="app_introduce">
+					<div class="app_introduce_title">ECShop for XAE</div><br />
+					<div><span style="color:#70019C">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基于ECShop修改而成的XAE一键开发专用版本!</span></div>
+				</div>
+	<?php
+		if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login'])
+			{
+	?>
+			<form method="post" action="__URL__/getName2" name="app_form3">  
+				<div class="app_load">
+				<div class="app_select">
+				<SELECT id="app_id" style="text-align:center;" name="app_id" style="width:110px;">
+				<OPTION width="200" selected="selected" value="--请选择应用--">--请选择应用--</OPTION>                		
+				<iterate name="list" id="vo">
+		    		
+                    		<OPTION width="200" value="{$vo.C_id}">{$vo.C_id}</OPTION>
+                		</iterate>
+            		        </SELECT>
+				</div>
+				<input class="app_button" type="submit" value="立即安装" 
+				onmouseover="this.className='app_button_over'" onmouseout="this.className='app_button'">
+				</div>
+			</form>
+	<?php			
+			}
+	?>
+			</div>
+		</div>
+	</div>
+<!--<div>各个浏览器解析问题，不要加该div-->
+
+<include file="Public:footer" />
+</body>
+</html>

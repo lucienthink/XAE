@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用发布-最新应用</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+</head>
+
+<body>
+
+<include file="Public:header5" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+<?php
+if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+echo <<<Eof
+	<li><a href="__URL__/ShowMyApp">我的应用</a></li>
+Eof;
+}
+?>
+			<li><a href="__URL__/applications" class="selected">最新应用</a></li>
+			<li><a href="__URL__/TopApp">热门应用</a></li>
+			<li><a href="__URL__/showAll">所有应用</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;最新应用
+			</div>
+			<div class="padding_top"></div>
+			<marquee scrollamount='2' scrolldelay='5' direction='down' onmouseover='this.stop()' onmouseout='this.start()' height="400" >
+			
+			<volist name='list' id='vo' >		
+			<ul class="newapp">
+			<li>应用名:<a href="#">{$vo.C_id}</a><br/></li>
+			<li>类型:{$vo.D_type}<br/></li>
+			<li>介绍:{$vo.D_state}<br/></li>
+			<li>{$vo.D_time}<br/></li>
+			</ul>
+			</volist>
+			
+			</marquee>
+
+		</div><!--main-->
+	</div>
+</div>
+
+
+<include file="Public:footer" />
+</body>
+</html>

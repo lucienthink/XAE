@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用发布-最新应用</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+</head>
+
+<script type="text/javascript" language="javascript" src="__PUBLIC__/javascript/ratingsys.js"></script> 
+<style type="text/css">
+    #rateStatus{float:left; clear:both; width:100%; height:20px;}
+    #rateMe{ clear:both; width:100%;  padding:0px; margin:0px;}
+    #rateMe li{float:left;list-style:none;}
+    #rateMe li a:hover,
+    #rateMe .on{background:url(__PUBLIC__/Information/star_on.gif) no-repeat;width:12px;height:12px;}
+    #rateMe a{float:left;background:url(__PUBLIC__/Information/star_off.gif) no-repeat;width:12px; height:12px;}
+    #ratingSaved{display:none;}
+    .saved{color:red; }
+   </style> 
+<body>
+
+<include file="Public:header5" />
+
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+<?php
+if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+echo <<<Eof
+	<li><a href="__URL__/ShowMyApp">我的应用</a></li>
+Eof;
+}
+?>
+			<li><a href="__URL__/applications" >最新应用</a></li>
+			<li><a href="__URL__/TopApp">热门应用</a></li>
+			<li><a href="__URL__/showAll" class="selected">所有应用</a></li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;所有应用
+			</div>
+			<div class="padding_top"></div>
+			
+			<volist name='list' id='vo' >		
+			<ul class="newapp">
+			<li>应用名:<a href="#">{$vo.C_id}</a><br/></li>
+			<li>类型:{$vo.D_type}<br/></li>
+			<li>介绍:{$vo.D_state}<br/></li>
+			<li>{$vo.D_time}<br/></li>
+			{/*<li><span id="rateStatus">评分...</span>
+			<span id="ratingSaved">评分结果!</span> 
+			<div id="rateMe" title="评分...">
+			<a onclick="rateIt(this)" id="_1" title="较差" onmouseover="rating(this)" onmouseout="off(this)"></a>
+			<a onclick="rateIt(this)" id="_2" title="还可以" onmouseover="rating(this)" onmouseout="off(this)"></a>
+			<a onclick="rateIt(this)" id="_3" title="好" onmouseover="rating(this)" onmouseout="off(this)"></a>
+			<a onclick="rateIt(this)" id="_4" title="相当好" onmouseover="rating(this)" onmouseout="off(this)"></a>
+			<a onclick="rateIt(this)" id="_5" title="好极了" onmouseover="rating(this)" onmouseout="off(this)"></a>
+			</div></li>*/}
+			</ul>
+			</volist>
+			<div class="green-black">{$page}</div><br /><br />
+		</div><!--main-->
+	</div>
+</div>
+
+<include file="Public:footer" />
+</body>
+</html>

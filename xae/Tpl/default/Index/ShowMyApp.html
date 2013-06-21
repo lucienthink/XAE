@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用发布-我的应用</title>
+<link rel="shortcut icon" href="__PUBLIC__/Information/favicon.ico" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/common.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/app.css" />
+<link rel="stylesheet" href="__PUBLIC__/CSS/temp.css" /> 
+</head>
+
+<body>
+<include file="Public:header5" />
+<div id="doc">
+	<div id="body">
+		<div class="navigation">
+			<ul id="menu">
+			<li><a href="#" class="selected">我的应用</a></li>
+			<li><a href="__URL__/applications">最新应用</a></li>
+			<li><a href="__URL__/TopApp">热门应用</a></li>
+			<li>所有应用</li>
+			</ul>
+		</div>
+		<div id="main">
+			<div class="separator radius">
+			<img  src="__PUBLIC__/Information/bulb1.png" width="24" height="30" align="left">&nbsp;&nbsp;我的应用
+			</div>
+			<div class="padding_top"></div>
+			<div id="selectimg">
+				<a href="javascript:moveItem(1,tounum);"><img  src="__PUBLIC__/Information/1.jpg" width="120" height="80" name="image" id="image"></a>
+				<a href="javascript:moveItem(2,tounum);"><img  src="__PUBLIC__/Information/2.jpg" width="120" height="80" name="image"></a><br/>
+				<a href="javascript:moveItem(3,tounum);"><img  src="__PUBLIC__/Information/3.jpg" width="120" height="80" name="image"></a>
+			</div>
+			<div align="right" id="mainid"> 
+				<div id="img1" class="imgbox">
+					<div class="imgbox1">
+						<div class="image"><img  src="__PUBLIC__/Information/1.jpg" width="180" height="120" border="0"/></div>
+						<div class="title">应用title</div>
+						<div class="introduce">暂无介绍</div>
+					</div>
+				</div>
+				<div id="img2" class="moveimgbox">
+					<div class="imgbox1">
+						<div class="image"><img  src="__PUBLIC__/Information/2.jpg" width="180" height="120" border="0"/></div>
+						<div class="title">应用title</div>
+						<div class="introduce">暂无介绍</div>
+					</div>
+				</div>
+				<div id="img3" class="moveimgbox">
+					<div class="imgbox1">
+						<div class="image"><img  src="__PUBLIC__/Information/3.jpg" width="180" height="120" border="0"/></div>
+						<div class="title">应用title</div>
+						<div class="introduce">暂无介绍</div>
+					</div>
+				</div>
+			</div> 
+		</div><!--main-->
+	</div>
+</div>
+<script language="javascript" src="__PUBLIC__/javascript/applicationschange.js"></script>
+<include file="Public:footer" />
+</body>
+</html>

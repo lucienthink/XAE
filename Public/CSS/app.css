@@ -1,0 +1,96 @@
+.separator {width:930px;line-height:30px;height:30px;padding:0 0 0 10px;margin:10px 0 10px 0;background:#ffe8e8 no-repeat scroll center;}/*background���Ӧ������color,img,repeat,attachment,position;line-height:�������ֶεĸ߶�*/
+.radius {border-radius:5px;-khtml-border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;position:relative;}/*Բ��*/
+.bar {height:25px;padding-bottom:5px;border-bottom:2px  solid #ffe8e8;font-size:16px;margin-right:2%;}/*��Ҫ�����е�������,��:���������� >>  ��̳� >>  ������*/
+.title {margin:1em 0;font-size:20px;font-weight:bold;}
+.text_layer0 {width:100%;border:#ffe8e8 2px solid;min-height:400px;float:left;background-color:#FFFFFF;}/*���Ĳ������һ��*/
+.text_layer1 {width:98%;margin:5px;min-height:390px; line-height:170%}/*���Ĳ���Ƕ�ײ�*/
+.left {float:left;width:190px;min-height:200px;background:#ffffff; border:#ffe8e8 solid 2px;}
+.left_con {margin:0 auto;width:180px;margin:5px;color:#0066ff;}
+.left_con li {margin:3px;margin:10px;font-weight:bold;font-size:14px;}
+.right {color:#aaaaaa;font-weight:bolder;font-size:14px;}/*copyright*/
+.anchor {border-radius: 5px 5px 5px 5px;float:right;padding:5px;border:#ffe8e8 solid 2px;width:200px; margin:5px}/*������*/
+.app {border-bottom:2px solid #ffe8e8;padding:5px;position:relative;width:930px;min-height:130px;}/*Ӧ�ò�*/
+.app_image {width:128px;height:128px;overflow:hidden;margin-right:15px;float:left;}/*Ӧ�õ�ͼƬ*/
+.app_introduce {float:left;position:relative;top:20px;width:400px;padding:5px;line-height:160%;}/*Ӧ�õĽ���*/
+.app_introduce_title{font-weight:800;font-size:20px;}
+.app_load{float:left;position:relative;}
+.app_select{float:left;position:relative;top:70px;left:60px;}
+.app_button{background: none repeat scroll 0 50% #8600FF;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: arial,verdana,serif;
+    font-size: 9pt;
+    font-weight: bold;
+    padding: 3px 10px;
+    vertical-align: middle;
+	float:left;
+	position:relative;top:70px;left:100px}
+.app_button_over{background: none repeat scroll 0 50% #28004D;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: arial,verdana,serif;
+    font-size: 9pt;
+    font-weight: bold;
+    padding: 3px 10px;
+    vertical-align: middle;
+	position:relative;top:70px;left:100px}
+.faqs_content {width:100%;padding:5px;}/*������������*/
+.doc_anchor {font-size: 20px;line-height: 1.5em;}/*����С����*/
+ul.ul_2{margin-left: 2em;}/*�ĵ����������б��������*/
+.frame{border: 1px solid #CCCCCC;margin: 6px 5px;padding: 10px;width:70%;line-height: 260%;}/*�����߳�Ϊ1�Ŀ��*/
+#applicationadd{float: right;text-align: right;width: 30%;}/*�������Ӧ�õĿ�*/
+
+p.big{font-size: 16px;font-weight: bold;}/*�������*/
+.frame_2{border: 1px solid #CCCCCC;margin: 6px 0;padding: 10px;width:29%; float:left; margin:5px 5px;height: 150px;line-height: 300%;text-align: center;}/*���������ҳ��Ŀ��*/
+.container {border: 1px solid #CCCCCC;line-height: 260%;margin:10px 0 5px 5px;padding: 10px;width:875px;}
+.container1 {border: 1px solid #CCCCCC;line-height: 260%;margin:10px 0 5px 5px 0;padding: 10px;margin:0 auto;height:130px;}
+.input_information:focus{background-color:RGB(230,250,250);}/*���������*/
+.single{background-color:RGB(210,250,210);}/*����������ɫ����Ч��*/
+td.diyilie {text-align:right; vertical-align:top;}td.dierlie {text-align:left}/*�ϴ�Ӧ��ҳ��ʽ*/
+.info{padding:10px 40px;font-size:20px;font-weight:bold;background-color:#FFE8E8;}
+td.lie{ vertical-align:top;text-align:left;}
+td.lie1{ vertical-align:top;text-align:left;width:400px;word-wrap: break-word;word-break:break-all;}
+
+/*最新应用*/
+.newapp {border-bottom:3px solid #ffe8e8;font-size:13px;font-weight:bold;}
+.newapp li {margin:10px 20px;}
+.app_button2{background: none repeat scroll 0 50% #8600FF;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: arial,verdana,serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 10px;
+    vertical-align: middle;
+	height:24px;
+	position:absolute;left:400px}
+.app_button_over2{background: none repeat scroll 0 50% #28004D;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: arial,verdana,serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 10px;
+    vertical-align: middle;
+	height:24px;
+	position:absolute;left:400px}
+.app_button3{background: none repeat scroll 0 50% #8600FF;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: arial,verdana,serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 10px;
+    vertical-align: middle;
+	height:24px;
+	position:absolute;left:480px}
+.app_button_over3{background: none repeat scroll 0 50% #28004D;
+    border-width: 1px;
+    color: #FFFFFF;
+    font-family: arial,verdana,serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 10px;
+    vertical-align: middle;
+	height:24px;
+	position:absolute;left:480px}

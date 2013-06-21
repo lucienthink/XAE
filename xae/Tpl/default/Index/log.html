@@ -1,0 +1,54 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../Public/__PUBLIC__/CSS/log.css" type="text/css" />
+<link rel="stylesheet" href="../Public/__PUBLIC__/CSS/common.css" type="text/css" />
+<script language="javascript">
+function check_info(){
+   if(document.home_form.A_id.value.length<4){
+     alert('用户名过短！');
+	 return false;
+   }
+   if(document.home_form.A_code.value.length<4){
+     alert('密码过短！');
+	 return false;
+   }
+}
+</script>
+
+
+<?php
+if(isset($_SESSION[C('USER_AUTH_KEY')]) && true === $_SESSION['login']){
+echo '<br />';
+echo '欢迎&nbsp;&nbsp;&nbsp;';
+echo '<font size="4">'.$_SESSION['account'].'</font>';
+echo <<<EOF
+ &nbsp;&nbsp;&nbsp;光临!<br /><br />
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="__URL__/userinfoshow"> >>>>查看个人资料 </a>
+EOF;
+}else{
+echo <<<EOF
+<form name="home_form" method="post" action="__URL__/checkUser" onsubmit="return check_info();">
+<div class="log">
+	<div>
+		<div class="account">用户名：</div>
+		<div class="input_name"><input style="width:110px" type="text" id="A_id" name="A_id"/></div>
+		 <div class="zhmm"><a href="__URL__/register">
+		 <img src="__PUBLIC__/Information/免费注册.gif"  width="50" height="20"></a></div>
+	</div>
+		<br />
+	<div>
+		<div class="password">密码：</div>
+		<div class="input_pwd"><input type="password" style="width:110px" id="A_code" name="A_code" /></div>
+		<div class="zhmm"><a href="__URL__/forget">
+		<img src="__PUBLIC__/Information/找回密码.jpg" width="50" height="20"></a></div>
+	</div>
+		<br />
+	<div><button type="submit">
+	<img src="__PUBLIC__/Information/登录.jpg"></button>
+	</div>
+</div>
+</form>
+EOF;
+}
+?>
+
